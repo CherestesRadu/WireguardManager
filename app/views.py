@@ -29,3 +29,10 @@ def index():
             message = f"Peer '{peer_name}' added successfully."
     return render_template("index.html", message=message)
 
+@main.route("/dashboard", methods=["GET", "POST"])
+def dashboard():
+    return render_template("dashboard.html")
+
+@main.route("/peers", methods=["GET", "POST"])
+def peers():
+    return render_template("peers.html")
