@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WireGuard Manager</title>
+</head>
+<body>
+  <h1>Add New WireGuard Peer</h1>
+  <form method="POST" action="/">
+    <label for="peer_name">Peer Name:</label>
+    <input type="text" id="peer_name" name="peer_name" required>
+    <button type="submit">Add Peer</button>
+  </form>
+
+  {% if message %}
+    <p style="color: green;">{{ message }}</p>
+  {% endif %}
+</body>
+</html>
