@@ -47,18 +47,16 @@
             </li>
         </ul>
     </nav>
-    <div id="peers">
-        <h2>Wireguard peers</h2>
-        <ul>
-            <li>
-                <span>Peer1</span>
-            </li>
-            <li>
-                <span>Peer2</span>
-            </li>
-        </ul>
-        <a href="{{ url_for('main.new_peer') }}"><span>Add new peer</span></a>
-    </div>
+
+    <form method="POST">
+        <label for="name">Peer Name:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label for="ip">IP Address:</label>
+        <input type="text" name="ip" required><br><br>
+
+        <button type="submit">Add Peer</button>
+    </form>
 </body>
 
 </html>

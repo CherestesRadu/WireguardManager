@@ -1,0 +1,10 @@
+{
+    "peers": [
+        {
+            "name": "RaduMobile",
+            "ip": "10.0.0.2",
+            "public_key": "2JtN2cg+9sP3nSgehRnElU4mngb0UamcWYhZGjsCyBw=",
+            "private_key": "+DpSeOCDYlN9W2mGOjR8ou2iV3digkVAF3f3pP3geVg="
+        }
+    ]
+}
