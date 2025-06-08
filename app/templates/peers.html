@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </head>
 
 <body>
@@ -49,13 +50,7 @@
     </nav>
     <div id="peers">
         <h2>Wireguard peers</h2>
-        <ul>
-            <li>
-                <span>Peer1</span>
-            </li>
-            <li>
-                <span>Peer2</span>
-            </li>
+        <ul id="peer-list">
         </ul>
         <a href="{{ url_for('main.new_peer') }}"><span>Add new peer</span></a>
     </div>

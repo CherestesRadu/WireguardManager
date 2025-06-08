@@ -103,3 +103,7 @@ main p {
 #peers {
     margin: 20px;
 }
+
+#peers li span {
+    padding-right: 10px;
+}

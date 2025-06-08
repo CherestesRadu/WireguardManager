@@ -61,3 +61,29 @@ def add_peer(peer_name, given_ip):
     except Exception as e:
         logging.error(f"Unexpected error: {e}")
         raise RuntimeError("An unexpected error occurred.")
+    
+    
+def get_peers():
+    
+    try:
+        with open("peers_metadata.json", "r") as f:
+            data = json.load(f)
+            peers = []
+            for peer in data["peers"]:
+                peers.append({"name": peer["name"], "ip": peer["ip"]})
+            return peers
+    except Exception as e:
+        logging.error(f"Unexpected error: {e}")
+        raise RuntimeError("An unexpected error occured")
+    
+    
+def peer_reachable(ip):
+    try:
+        # Use -c 1 to send 1 ping, -W 1 for 1s timeout (Linux)
+        output = subprocess.run(["ping", "-c", "1", "-W", "1", ip],
+                                stdout=subprocess.DEVNULL,
+                                stderr=subprocess.DEVNULL)
+        return output.returncode == 0
+    except Exception:
+        return False
+        

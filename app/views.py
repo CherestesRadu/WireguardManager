@@ -48,5 +48,17 @@ def new_peer():
 
 @main.route("/api/peers")
 def get_peers():
-    peers = []
-    return jsonify(peers)
+    return jsonify(wg.get_peers())
+
+@main.route("/api/peer_status")
+def get_peer_status():
+    peers = wg.get_peers()
+    status = []
+    for peer in peers:
+        reachable = wg.peer_reachable(peer['ip'])
+        if reachable == False:
+            status.append({"name": peer["name"], "status": "Unreachable"})
+        else:
+            status.append({"name" : peer["name"], "status": "Online"})
+            
+    return jsonify(status)
