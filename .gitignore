@@ -1,4 +1,10 @@
-requirements
 users.json
 *.key
 /venv
+/__pycache__
+/app/__pycache__
+*.pyc
+.env
+*.log
+.vscode
+.idea/
